@@ -1,33 +1,10 @@
-import { ItemGrid } from "@/components/item-grid";
+import { ItemGrid } from "@/app/items/components/item-grid";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { fetchLatestVersion } from "@/lib/api/fetch-version";
-
-interface ItemType {
-  id: string;
-  name: string;
-  plaintext: string;
-  gold: {
-    base: number;
-  };
-
-  tags: string[];
-}
+import { fetchItemList } from "./utils/fetchItemList";
 
 export default async function ItemsPage() {
-  const version = await fetchLatestVersion();
-
-  const res = await fetch(
-    `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/item.json`,
-    { cache: "force-cache" }
-  );
-  const { data } = await res.json();
-  const items = Object.entries<Record<string, ItemType>>(data).map(
-    ([id, item]) => ({
-      id,
-      ...item,
-    })
-  );
+  const { items } = await fetchItemList();
 
   return (
     <div className="container py-6 space-y-6">
