@@ -9,8 +9,10 @@ import Image from "next/image";
 import { useFilteredChampions } from "../../hooks/useFilterChampions";
 import { getTagColor } from "../utils/setTagColor";
 import { translateTag } from "../utils/translateTag";
+import { fetchLatestVersion } from "@/app/api/fetchVersion";
 
 export function ChampionGrid({ initialChampions, tag }: ChampionGridProps) {
+  const version = fetchLatestVersion();
   const { filteredChampions } = useFilteredChampions({ initialChampions, tag });
 
   return (
@@ -20,7 +22,7 @@ export function ChampionGrid({ initialChampions, tag }: ChampionGridProps) {
           <Card className="overflow-hidden h-full transition-all duration-200 hover:shadow-md hover:border-primary/50 hover:scale-[1.02]">
             <div className="aspect-square w-full overflow-hidden bg-gradient-to-b from-secondary/50 to-background relative">
               <Image
-                src={`https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champion.image.full}`}
+                src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champion.image.full}`}
                 alt={champion.name}
                 className="w-full h-full object-cover object-top transition-transform duration-300"
                 width={512}
