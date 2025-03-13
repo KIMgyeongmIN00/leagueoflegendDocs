@@ -33,14 +33,16 @@ export async function ItemGrid({ category, items }: ItemGridProps) {
                 <div className="w-12 h-12 rounded bg-secondary/50 flex items-center justify-center overflow-hidden">
                   <Image
                     src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image.full}`}
-                    alt={item.name}
+                    alt={removeHtmlTags(item.name)}
                     className="w-full h-full object-cover"
                     width={48}
                     height={48}
                   />
                 </div>
                 <div>
-                  <CardTitle className="text-base">{item.name}</CardTitle>
+                  <CardTitle className="text-base">
+                    {removeHtmlTags(item.name)}
+                  </CardTitle>
                   <div className="flex items-center mt-1">
                     <Coins className="w-4 h-4 mr-1" />
                     <span className="text-sm text-yellow-500 font-medium">
@@ -104,7 +106,8 @@ export async function ItemGrid({ category, items }: ItemGridProps) {
               })}
             </div>
             <CardDescription className="mt-3 line-clamp-3 text-xs">
-              {item.plaintext || removeHtmlTags(item.description)}
+              {removeHtmlTags(item.plaintext) ||
+                removeHtmlTags(item.description)}
             </CardDescription>
           </CardContent>
         </Card>
