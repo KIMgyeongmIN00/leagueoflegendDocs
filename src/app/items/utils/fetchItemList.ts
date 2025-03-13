@@ -1,4 +1,4 @@
-import { fetchLatestVersion } from "@/app/api/action";
+import { fetchLatestVersion } from "@/app/api/fetchVersion";
 import { ApiItem, ItemPageLogicResult } from "../types";
 
 export async function fetchItemList(): Promise<ItemPageLogicResult> {

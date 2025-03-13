@@ -15,7 +15,7 @@ export default function Home() {
           </p>
           <div className="space-x-4">
             <Link href="/champions">
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="hover:bg-gray-700">
                 챔피언 보기 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
