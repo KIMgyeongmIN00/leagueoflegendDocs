@@ -6,13 +6,15 @@ import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
 import { ChampionGridProps } from "../types";
 import Image from "next/image";
-import { useFilteredChampions } from "../../hooks/useFilterChampions";
+import { useFilteredChampions } from "../hooks/useFilterChampions";
 import { getTagColor } from "../utils/setTagColor";
 import { translateTag } from "../utils/translateTag";
-import { fetchLatestVersion } from "@/app/api/fetchVersion";
 
-export function ChampionGrid({ initialChampions, tag }: ChampionGridProps) {
-  const version = fetchLatestVersion();
+export function ChampionGrid({
+  initialChampions,
+  tag,
+  version,
+}: ChampionGridProps) {
   const { filteredChampions } = useFilteredChampions({ initialChampions, tag });
 
   return (
