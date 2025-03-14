@@ -35,8 +35,8 @@ export async function ItemGrid({ category, items }: ItemGridProps) {
                     src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image.full}`}
                     alt={removeHtmlTags(item.name)}
                     className="w-full h-full object-cover"
-                    width={48}
-                    height={48}
+                    width={32}
+                    height={32}
                   />
                 </div>
                 <div>

@@ -1,3 +1,5 @@
+"use server";
+
 import { DetailChampion } from "../types";
 import Image from "next/image";
 import { translateTag } from "../utils/translateTag";

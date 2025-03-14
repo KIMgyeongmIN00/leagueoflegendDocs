@@ -1,3 +1,5 @@
+"use server";
+
 import { fetchLatestVersion } from "@/app/api/fetchVersion";
 import { ApiChampions } from "../types";
 
@@ -5,7 +7,7 @@ export async function fetchChampionList() {
   const version = await fetchLatestVersion();
   const response = await fetch(
     `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/champion.json`,
-    { next: { revalidate: 600 } }
+    { next: { revalidate: 60000 } }
   );
   const data = await response.json();
   const champions = Object.values(data.data) as ApiChampions[];

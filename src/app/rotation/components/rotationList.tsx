@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ApiChampions } from "@/app/champions/types";
+import Image from "next/image";
 
 interface RotationChampionListProps {
   champions: ApiChampions[];
@@ -14,10 +15,12 @@ export function RotationChampionList({ champions }: RotationChampionListProps) {
         <Link href={`/champions/${champion.id}`} key={champion.id}>
           <Card className="overflow-hidden h-full transition-all duration-200 hover:shadow-md hover:border-primary/50 hover:scale-[1.02] bg-gradient-to-b from-background to-secondary/10">
             <div className="relative">
-              <img
+              <Image
                 src={`https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champion.image.full}`}
                 alt={champion.name}
                 className="w-full aspect-square object-cover object-center"
+                width={256}
+                height={256}
               />
               <div className="absolute top-0 right-0 m-2">
                 <Badge className="bg-blue-500 text-white">무료</Badge>

@@ -6,9 +6,9 @@ import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
 import { ChampionGridProps } from "../types";
 import Image from "next/image";
-import { useFilteredChampions } from "../hooks/useFilterChampions";
 import { getTagColor } from "../utils/setTagColor";
 import { translateTag } from "../utils/translateTag";
+import { useFilteredChampions } from "../utils/hooks/useFilterChampions";
 
 export function ChampionGrid({
   initialChampions,
