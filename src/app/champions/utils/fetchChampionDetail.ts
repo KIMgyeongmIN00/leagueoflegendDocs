@@ -1,3 +1,5 @@
+"use server";
+
 import { fetchLatestVersion } from "@/app/api/fetchVersion";
 import { ApiChampions } from "../types";
 

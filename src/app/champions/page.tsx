@@ -4,8 +4,10 @@ import { ChampionSearch } from "./components/searchChampion";
 import { ChampionGrid } from "./components/championGrid";
 import { translateTag } from "./utils/translateTag";
 import { fetchChampionList } from "./utils/fetchChampionList";
+import { fetchLatestVersion } from "../api/fetchVersion";
 
 export default async function ChampionsPage() {
+  const version = await fetchLatestVersion();
   const { champions, allTags } = await fetchChampionList();
 
   return (
@@ -32,12 +34,20 @@ export default async function ChampionsPage() {
         </TabsList>
 
         <TabsContent value="all" className="mt-0">
-          <ChampionGrid initialChampions={champions} tag="all" />
+          <ChampionGrid
+            initialChampions={champions}
+            tag="all"
+            version={version}
+          />
         </TabsContent>
 
         {allTags.map((tag) => (
           <TabsContent key={tag} value={tag} className="mt-0">
-            <ChampionGrid initialChampions={champions} tag={tag} />
+            <ChampionGrid
+              initialChampions={champions}
+              tag={tag}
+              version={version}
+            />
           </TabsContent>
         ))}
       </Tabs>

@@ -1,10 +1,12 @@
+"use client";
+
 import { useSearchParams } from "next/navigation";
-import { ChampionGridProps } from "../champions/types";
+import { FilteredChampionArgs } from "../../types";
 
 export function useFilteredChampions({
   initialChampions,
   tag,
-}: ChampionGridProps) {
+}: FilteredChampionArgs) {
   const searchParams = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
 

@@ -49,8 +49,14 @@ export interface ApiChampions {
 export interface ChampionGridProps {
   initialChampions: ApiChampions[];
   tag: string;
+  version: string;
 }
 
 export interface DetailChampion {
   params: { id: string };
+}
+
+export interface FilteredChampionArgs {
+  initialChampions: ApiChampions[];
+  tag: string;
 }

@@ -1,3 +1,5 @@
+"use server";
+
 import { ItemGrid } from "@/app/items/components/item-grid";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
