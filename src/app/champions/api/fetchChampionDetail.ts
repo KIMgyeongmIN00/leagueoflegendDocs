@@ -12,5 +12,5 @@ export async function fetchChampionDetail(id: string) {
   const data = await response.json();
   const champion = data.data[id] as ApiChampions;
 
-  return { champion };
+  return champion;
 }

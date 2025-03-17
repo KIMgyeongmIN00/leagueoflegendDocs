@@ -3,12 +3,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChampionSearch } from "./components/searchChampion";
 import { ChampionGrid } from "./components/championGrid";
 import { translateTag } from "./utils/translateTag";
-import { fetchChampionList } from "./utils/fetchChampionList";
 import { fetchLatestVersion } from "../api/fetchVersion";
+import { getChampionTags } from "./utils/getChampionTags";
+import { fetchChampionList } from "./api/fetchChampionList";
 
 export default async function ChampionsPage() {
   const version = await fetchLatestVersion();
-  const { champions, allTags } = await fetchChampionList();
+  const champions = await fetchChampionList();
+  const allTags = await getChampionTags();
 
   return (
     <div className="container py-6 space-y-6">

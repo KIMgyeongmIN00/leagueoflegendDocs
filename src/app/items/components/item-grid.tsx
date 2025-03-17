@@ -15,9 +15,9 @@ import { TooltipTrigger } from "@radix-ui/react-tooltip";
 import { Coins, Info } from "lucide-react";
 import { ItemGridProps } from "../types";
 import { categoryFilter } from "../utils/filterItems";
-import { fetchItemList } from "../utils/fetchItemList";
 import Image from "next/image";
 import { removeHtmlTags } from "../utils/removeHtmlTags";
+import { fetchItemList } from "../api/fetchItemList";
 
 export async function ItemGrid({ category, items }: ItemGridProps) {
   const { filteredItems } = categoryFilter(category, items);

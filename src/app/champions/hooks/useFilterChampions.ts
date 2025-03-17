@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { FilteredChampionArgs } from "../../types";
+import { FilteredChampionArgs } from "../types";
 
 export function useFilteredChampions({
   initialChampions,

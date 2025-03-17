@@ -10,6 +10,7 @@ const nextConfig = {
       },
     ],
   },
+  experimentalRuntimeJSBundles: false,
 };
 
 export default nextConfig;

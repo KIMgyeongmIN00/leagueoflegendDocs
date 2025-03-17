@@ -3,7 +3,7 @@
 import { ItemGrid } from "@/app/items/components/item-grid";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { fetchItemList } from "./utils/fetchItemList";
+import { fetchItemList } from "./api/fetchItemList";
 
 export default async function ItemsPage() {
   const { items } = await fetchItemList();

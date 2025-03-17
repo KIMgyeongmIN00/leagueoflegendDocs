@@ -8,7 +8,7 @@ import { ChampionGridProps } from "../types";
 import Image from "next/image";
 import { getTagColor } from "../utils/setTagColor";
 import { translateTag } from "../utils/translateTag";
-import { useFilteredChampions } from "../utils/hooks/useFilterChampions";
+import { useFilteredChampions } from "../hooks/useFilterChampions";
 
 export function ChampionGrid({
   initialChampions,
