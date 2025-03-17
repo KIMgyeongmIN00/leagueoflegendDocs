@@ -3,10 +3,10 @@
 import { DetailChampion } from "../types";
 import Image from "next/image";
 import { translateTag } from "../utils/translateTag";
-import { fetchChampionDetail } from "../utils/fetchChampionDetail";
+import { fetchChampionDetail } from "../api/fetchChampionDetail";
 
 export default async function ChampionDetailPage({ params }: DetailChampion) {
-  const { champion } = await fetchChampionDetail(params.id);
+  const champion = await fetchChampionDetail(params.id);
 
   return (
     <div className="container py-6">

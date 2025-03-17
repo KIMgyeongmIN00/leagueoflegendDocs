@@ -1,14 +1,11 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ApiChampions } from "@/app/champions/types";
 import Image from "next/image";
+import { useGetFreeChampionList } from "../hooks/useFetchFreeChampionList";
 
-interface RotationChampionListProps {
-  champions: ApiChampions[];
-}
-
-export function RotationChampionList({ champions }: RotationChampionListProps) {
+export function RotationChampionList() {
+  const { champions } = useGetFreeChampionList();
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
       {champions.map((champion) => (
@@ -21,6 +18,7 @@ export function RotationChampionList({ champions }: RotationChampionListProps) {
                 className="w-full aspect-square object-cover object-center"
                 width={256}
                 height={256}
+                priority
               />
               <div className="absolute top-0 right-0 m-2">
                 <Badge className="bg-blue-500 text-white">무료</Badge>
