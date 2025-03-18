@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { fetchLatestVersion } from "../fetchVersion";
-import { ApiChampions } from "@/app/champions/types";
+import { fetchLatestVersion } from "../fetch-version";
+import { ApiChampions } from "@/lib/types";
 
 export async function GET() {
-  const version = await fetchLatestVersion();
+  const version: string = await fetchLatestVersion();
 
   const allChampionResponse = await fetch(
     `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/champion.json`

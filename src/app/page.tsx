@@ -10,8 +10,9 @@ export default function Home() {
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-blue-700">
             롤 도감
           </h1>
-          <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            챔피언 정보, 아이템 가이드, 그리고 당신의 전적을 한눈에 확인하세요.
+          <p className="max-w-[42rem] leading-normal text-pretty break-keep sm:text-xl sm:leading-8">
+            챔피언 정보, 아이템 가이드, 그리고 현재 로테이션을 한눈에
+            확인하세요.
           </p>
           <div className="space-x-4">
             <Link href="/champions">

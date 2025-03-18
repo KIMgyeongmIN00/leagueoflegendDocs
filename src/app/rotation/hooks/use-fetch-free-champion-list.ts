@@ -1,17 +1,17 @@
 "use client";
 
-import { ApiChampions } from "@/app/champions/types";
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { ApiChampions } from "@/lib/types";
 
-export function useGetFreeChampionList() {
+export function useFetchFreeChampionList() {
   const [champions, setChampions] = useState<ApiChampions[]>([]);
 
   const { data: rotationList } = useQuery<number[], Error>({
     queryKey: ["rotation"],
     queryFn: async () => {
       const res = await fetch("/api/rotation");
-      if (!res.ok) throw new Error("Failed to fetch rotation list");
+      if (!res.ok) throw new Error();
       return res.json();
     },
   });
@@ -20,14 +20,13 @@ export function useGetFreeChampionList() {
     queryKey: ["champion"],
     queryFn: async () => {
       const res = await fetch("/api/champion");
-      if (!res.ok) throw new Error("Failed to fetch champion list");
+      if (!res.ok) throw new Error();
       return res.json();
     },
   });
 
   useEffect(() => {
     if (rotationList && allChampions) {
-      // ✅ 안전한 조건 처리 후 필터링 및 정렬
       const rotationChampions = allChampions.filter((champion) =>
         rotationList.includes(parseInt(champion.key))
       );
@@ -38,7 +37,7 @@ export function useGetFreeChampionList() {
 
       setChampions(sortedChampions);
     }
-  }, [rotationList, allChampions]); // ✅ 의존성 배열 추가
+  }, [rotationList, allChampions]);
 
   return { champions };
 }

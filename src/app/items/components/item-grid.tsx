@@ -13,11 +13,11 @@ import {
 } from "@/components/ui/tooltip";
 import { TooltipTrigger } from "@radix-ui/react-tooltip";
 import { Coins, Info } from "lucide-react";
-import { ItemGridProps } from "../types";
 import { categoryFilter } from "../utils/filterItems";
 import Image from "next/image";
 import { removeHtmlTags } from "../utils/removeHtmlTags";
 import { fetchItemList } from "../api/fetchItemList";
+import { ItemGridProps } from "@/lib/types";
 
 export async function ItemGrid({ category, items }: ItemGridProps) {
   const { filteredItems } = categoryFilter(category, items);

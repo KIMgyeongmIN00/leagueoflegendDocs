@@ -1,4 +1,4 @@
-import { ApiItem } from "../types";
+import { ApiItem } from "@/lib/types";
 
 export function categoryFilter(category: string, items: ApiItem[]) {
   const filteredItems = items.filter((item) => {
