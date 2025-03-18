@@ -10,11 +10,9 @@ export function ChampionSearch() {
   const router = useRouter();
   const pathname = usePathname();
 
-  // URL 사용해서 쿼리파라미터로 검색
   const initialQuery = searchParams.get("search") || "";
   const [searchQuery, setSearchQuery] = useState(initialQuery);
 
-  // 검색 디바운스 기능
   useEffect(() => {
     const timer = setTimeout(() => {
       if (searchQuery) {

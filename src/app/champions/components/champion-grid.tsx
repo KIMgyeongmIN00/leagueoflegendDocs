@@ -4,11 +4,11 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
-import { ChampionGridProps } from "../types";
 import Image from "next/image";
-import { getTagColor } from "../utils/setTagColor";
-import { translateTag } from "../utils/translateTag";
-import { useFilteredChampions } from "../hooks/useFilterChampions";
+import { setTagColor } from "../utils/set-tag-color";
+import { translateTag } from "../utils/translate-tag";
+import { useFilteredChampions } from "../hooks/use-filter-champions";
+import { ChampionGridProps } from "@/lib/types";
 
 export function ChampionGrid({
   initialChampions,
@@ -33,7 +33,7 @@ export function ChampionGrid({
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background to-transparent h-1/3" />
               <div className="absolute bottom-2 left-2 right-2 flex flex-wrap gap-1">
                 {champion.tags.map((tag, index) => (
-                  <Badge key={index} className={`${getTagColor(tag)}`}>
+                  <Badge key={index} className={`${setTagColor(tag)}`}>
                     {translateTag(tag)}
                   </Badge>
                 ))}

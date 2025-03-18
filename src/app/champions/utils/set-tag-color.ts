@@ -1,4 +1,4 @@
-export function getTagColor(tag: string): string {
+export function setTagColor(tag: string): string {
   const colors: Record<string, string> = {
     Fighter: "bg-orange-500/80",
     Tank: "bg-blue-500/80",

@@ -25,7 +25,7 @@ export default function Header() {
             </span>
           </Link>
         </div>
-        <nav className="flex items-center space-x-6 text-sm font-medium">
+        <nav className="flex items-center space-x-6 text-xs sm:text-xs md:text-sm lg:text-md text-pretty break-keep font-medium">
           {navItems.map((item) => {
             const Icon = item.icon;
             return (

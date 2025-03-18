@@ -1,5 +1,5 @@
-import { fetchLatestVersion } from "@/app/api/fetchVersion";
-import { ApiChampions } from "../types";
+import { fetchLatestVersion } from "@/app/api/fetch-version";
+import { ApiChampions } from "@/lib/types";
 
 export async function fetchChampionList() {
   const version = await fetchLatestVersion();

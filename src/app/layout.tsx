@@ -2,7 +2,6 @@ import type React from "react";
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import Header from "@/components/header";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Providers from "@/components/RQProvider";
 
 export const metadata: Metadata = {
