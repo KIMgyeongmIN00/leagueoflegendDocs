@@ -43,12 +43,10 @@ export default async function ChampionDetailPage({
           <div className="md:w-1/3">
             <div className="sticky top-20">
               <div className="rounded-lg overflow-hidden bg-black/20 backdrop-blur-sm border border-white/10">
-                <Image
+                <img
                   src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`}
                   alt={champion.name}
                   className="w-full h-auto"
-                  width={1028}
-                  height={1028}
                 />
               </div>
 
