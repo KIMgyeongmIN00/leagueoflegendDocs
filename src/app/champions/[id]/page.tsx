@@ -8,7 +8,6 @@ import { fetchLatestVersion } from "@/app/api/fetch-version";
 import { removeHtmlTags } from "@/app/items/utils/removeHtmlTags";
 import { Progress } from "@/components/ui/progress";
 import { fetchChampionData } from "../api/fetch-champion-detail";
-import Image from "next/image";
 import { Champion, Spell } from "@/lib/types";
 
 export default async function ChampionDetailPage({
